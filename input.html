@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bauhaus Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1D1F26;
+            color: #FFFFFF;
+        }
+        form {
+            background-color: #3498db;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 15px;
+            margin: 15px 0;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #5bc0de;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #46b8da;
+        }
+        label {
+            display: block;
+            color: #DADADA;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name..." required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the input value
+            var name = document.getElementById("name").value;
+
+            // Display the input value
+            document.getElementById("output").innerHTML = "Hello, " + name + "! Welcome to our website.";
+        });
+    </script>
+</body>
+</html>

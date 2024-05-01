@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Ambient Website</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000;
+    }
+
+    .shooting-star {
+        position: absolute;
+        width: 1px;
+        height: 10px;
+        background-color: #fff;
+        animation: shootingStar 3s linear infinite;
+    }
+
+    @keyframes shootingStar {
+        0% {
+            transform: translateY(-100vh) translateX(0);
+        }
+        100% {
+            transform: translateY(100vh) translateX(100vw);
+        }
+    }
+
+    .star-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .star {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 50%;
+        animation: blink 1s infinite alternate;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Media queries */
+    @media screen and (min-width: 768px) {
+        .star:nth-child(3n+1) {
+            top: 30%;
+            left: 10%;
+        }
+        .star:nth-child(3n+2) {
+            top: 50%;
+            left: 60%;
+        }
+        .star:nth-child(3n+3) {
+            top: 80%;
+            left: 80%;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .star:nth-child(4n+1) {
+            top: 20%;
+            left: 10%;
+        }
+        .star:nth-child(4n+2) {
+            top: 40%;
+            left: 60%;
+        }
+        .star:nth-child(4n+3) {
+            top: 60%;
+            left: 30%;
+        }
+        .star:nth-child(4n+4) {
+            top: 80%;
+            left: 80%;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="star-container">
+        <!-- Add stars here -->
+        <div class="star" style="top: 20%; left: 30%;"></div>
+        <div class="star" style="top: 50%; left: 70%;"></div>
+        <div class="star" style="top: 10%; left: 50%;"></div>
+        <div class="star" style="top: 70%; left: 20%;"></div>
+        <div class="star" style="top: 80%; left: 80%;"></div>
+        <!-- Add more stars as needed -->
+    </div>
+    <div class="shooting-star"></div>
+     <div class="shooting-star" style="top: 10%; left: 20%;"></div>
+    <div class="shooting-star" style="top: 30%; left: 50%;"></div>
+    <div class="shooting-star" style="top: 70%; left: 80%;"></div>
+</body>
+</html>
